@@ -1,0 +1,66 @@
+Nombre: Modulo Tablas
+
+Librerias: npm i npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+Dependiencias: useObtenerCollectiionTablas = servicios BD
+
+
+Ejemplo:
+
+const Pagina = () => {
+    const {props} = useObtenerColleccionTablaListen({coleccion: 'pruebas', filtroInicial: 'nombre'})
+
+    const verDetalle = (e) => {
+        alert(JSON.stringify(e))
+    }
+
+    return (
+        <Grid
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+            sx={{py: 10}}
+        >
+
+            <TablaBasica
+                filtros={filtros}
+                datosCabecera={datosCabecera}
+                {...props}
+                click={verDetalle}
+            />
+
+
+        </Grid>
+    )
+
+}
+export default Pagina
+
+const filtros = [
+    {
+        nombre: 'Nombre',
+        propiedad: 'nombre',
+    },
+    {
+        nombre: 'Edad',
+        propiedad: 'edad',
+    }
+]
+
+const datosCabecera = [
+    {
+        nombre: 'Nombre',
+        direccion: 'left',
+        propiedad: 'nombre'
+    },
+    {
+        nombre: 'Edad',
+        direccion: 'right',
+        propiedad: 'edad'
+    },
+    {
+        nombre: 'Sexo',
+        direccion: 'right',
+        propiedad: 'sexo'
+    },
+]

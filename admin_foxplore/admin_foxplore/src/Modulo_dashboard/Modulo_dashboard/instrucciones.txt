@@ -1,0 +1,78 @@
+Nombre:Modulo Dashboard
+
+Librerias: npm i @fontsource/poppins @fontsource/montserrat @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/system
+
+Dependencias:
+Tema.js -> en directorio raiz
+    pallete
+        primary
+            ligth -> color fondo menu lateral
+
+Ejemplo:
+
+const Dashboard_Prueba = () => {
+
+    const click = () => {
+        alert('click en perfil')
+    }
+
+    return (
+        <Grid
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+        >
+
+            <DashboardBase secciones={secciones}>
+                <MenuLateral logo={logo} clickPerfil={click} logoRedondo={logoRedondo} logoBlanco={logo}/>
+            </DashboardBase>
+
+
+        </Grid>
+    )
+
+}
+export default Dashboard_Prueba
+
+const secciones = [
+
+    {
+        nombre: 'Dashboard',
+        Componente: <SeccionUno titulo={'Dashboard'}/>,
+        icono: DashboardOutlined,
+        categoria: 'propia',
+        camino: '/',
+    },
+    {
+        nombre: 'Product analytics',
+        Componente: <SeccionUno titulo={'Product analytics'}/>,
+        icono: BarChartOutlined,
+        categoria: 'RESEARCH TOOL',
+        camino: '/dos'
+
+    },
+    {
+        nombre: 'Watchlist',
+        Componente: <SeccionUno titulo={'Watchlist'}/>,
+        icono: LiveHelpOutlined,
+        categoria: 'RESEARCH TOOL',
+        camino: '/cinco'
+
+    }, {
+        nombre: 'Pedidos Archivados',
+        Componente: <SeccionUno titulo={'Pedidos Archivados'}/>,
+        icono: ArchiveOutlined,
+        categoria: 'Archivados',
+        camino: '/seis'
+
+    },
+    {
+        nombre: 'Pedidos Archivados',
+        Componente: <SeccionUno titulo={'Pedidos Archivados'}/>,
+        icono: ArchiveOutlined,
+        categoria: 'Archivados',
+        camino: '/ocho'
+
+    },
+]
